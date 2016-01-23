@@ -13,8 +13,8 @@ Path.prototype.postQuery = function(db) {
     }
     path += ')';
     return db.none(`INSERT INTO paths
-        (color, path) VALUES ('$1', path '$1');
+        (color, path) VALUES ('%$1^%', path '%$2^%');
     `, [ this.color, path ]);
 };
 
-modules.export = Path;
+module.exports = Path;
