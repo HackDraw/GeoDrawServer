@@ -41,11 +41,9 @@ function createBitmap(screen, paths) {
         ctx.beginPath();
         var coords = pathStringToPoints(paths[i].points);
         var point = convertCoordToXY(screen, coords[0]);
-        console.log(point);
         ctx.moveTo(point.latitude, point.longitude);
         for(var j = 1; j < coords.length; j++) {
             point = convertCoordToXY(screen, coords[j]);
-            console.log(point);
             ctx.lineTo(point.latitude, point.longitude);
         }
         ctx.stroke();
