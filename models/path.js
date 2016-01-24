@@ -6,8 +6,8 @@ function Path(color, points) {
 Path.prototype.postQuery = function(db) {
     var path = '(';
     for(var i = 0; i < this.points.length; i++) {
-        var x = this.points[i].latitude + 90;
-        var y = this.points[i].longitude + 180;
+        var x = this.points[i].x + 90;
+        var y = this.points[i].y + 180;
         path += `(${x},${y})`
         if(i < this.points.length - 1) {
             path += ',';

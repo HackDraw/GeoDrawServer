@@ -10,8 +10,8 @@ describe('Models', function() {
             var point = new Point(-99.123, 99.123);
 
             expect(point).to.deep.equal({
-                latitude: -99.123,
-                longitude: 99.123
+                x: -99.123,
+                y: 99.123
             });
         });
     });
@@ -29,16 +29,16 @@ describe('Models', function() {
             expect(path).to.have.deep.property('color', "#FFF777");
             expect(path.points).to.deep.equal([
                     {
-                        latitude: -99.123,
-                        longitude: 99.123
+                        x: -99.123,
+                        y: 99.123
                     },
                     {
-                        latitude: 99.123,
-                        longitude: -99.123
+                        x: 99.123,
+                        y: -99.123
                     },
                     {
-                        latitude: 1,
-                        longitude: 1
+                        x: 1,
+                        y: 1
                     }
             ]);
         });
