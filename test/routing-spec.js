@@ -62,6 +62,10 @@ describe('Routing', function() {
                         {
                             "latitude": 98.2456,
                             "longitude": 122.1456
+                        },
+                        {
+                            "latitude": 192.10,
+                            "longitude": 67
                         }
                     ]
                 })
