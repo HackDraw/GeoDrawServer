@@ -4,18 +4,9 @@ function Path(color, points) {
 }
 
 Path.prototype.postQuery = function(db) {
-    var path = '(';
-    for(var i = 0; i < this.points.length; i++) {
-        var x = this.points[i].x + 90;
-        var y = this.points[i].y + 180;
-        path += `(${x},${y})`
-        if(i < this.points.length - 1) {
-            path += ',';
-        }
-    }
-    path += ')';
+    var path = this.points.map(p => `(${p.x + 90},${p.y + 180})`).join(',');
     return db.one(`INSERT INTO paths
-        (color, points) VALUES ('$1^', path '$2^')
+        (color, points) VALUES ($1, path($2))
         RETURNING id;
     `, [ this.color, path ]);
 };
