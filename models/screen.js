@@ -1,6 +1,8 @@
+var Point = require('./point');
+
 function Screen(startPoint, endPoint) {
-    this.startPoint = startPoint;
-    this.endPoint = endPoint;
+    this.startPoint = new Point(startPoint.latitude, startPoint.longitude);
+    this.endPoint = new Point(endPoint.latitude, endPoint.longitude);
 }
 
 Screen.prototype.intersectsQuery = function(db) {
@@ -10,7 +12,7 @@ Screen.prototype.intersectsQuery = function(db) {
         ORDER BY timestamp ASC
     `, [
         this.startPoint.latitude, this.startPoint.longitude,
-        this.endPoint.latitude, this.endPoint.longitude;
+        this.endPoint.latitude, this.endPoint.longitude
     ]);
 };
 

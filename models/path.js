@@ -1,12 +1,12 @@
-function Path(color, path) {
+function Path(color, points) {
     this.color = color;
-    this.path = path;
+    this.points = points;
 }
 
 Path.prototype.postQuery = function(db) {
     var path = '(';
-    for(let i = 0; i < this.path.length; i++) {
-        path += `(${this.path[i].latitude}, ${this.path[i].longitude})`
+    for(var i = 0; i < this.path.length; i++) {
+        path += `(${this.points[i].latitude}, ${this.points[i].longitude})`
         if(i < this.path.length - 1) {
             path += ',';
         }

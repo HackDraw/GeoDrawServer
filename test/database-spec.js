@@ -2,4 +2,6 @@ var request = require('supertest');
 var expect = require('chai').expect;
 var rewire = require('rewire');
 
-var db = require('../models/database.js');
+var Path = require('../models/path');
+var Point = require('../models/point');
+var Screen = require('../models/screen');

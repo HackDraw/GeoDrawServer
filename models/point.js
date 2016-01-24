@@ -3,4 +3,4 @@ function Point(latitude, longitude) {
     this.longitude = longitude;
 }
 
-modules.export = Point;
+module.exports = Point;
