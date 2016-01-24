@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
     var db = pgp(connObj);
     // startPoint, endPoint, deltaResolution
     var screen = new Screen(
-        new Point(parseInt(req.query.startLatitude), parseInt(req.query.startLongitude)),
-        new Point(parseInt(req.query.endLatitude), parseInt(req.query.endLongitude)),
+        new Point(parseFloat(req.query.startLatitude), parseFloat(req.query.startLongitude)),
+        new Point(parseFloat(req.query.endLatitude), parseFloat(req.query.endLongitude)),
         new Point(parseInt(req.query.deltaResX), parseInt(req.query.deltaResY))
     );
     console.log(screen);
